@@ -1,0 +1,351 @@
+
+
+// color variables
+$teal: #009dc1;
+$red: #ff130d;
+
+$green: #006842;
+$green-light: rgba( $green, .1 );
+
+$grey: #434A54;
+$grey-light: lighten( $grey, 40% );
+
+@import "reset";
+
+@import "fonts";
+
+@import "mixins";
+
+@import "base";
+
+@import "grid";
+
+
+body {
+	border-top: 30px solid $grey;
+	background: url(../img/bg-body.jpg) center center repeat-x;
+	background-size: cover;
+
+	@include respond-to( 768px ) {
+		border-top: 50px solid $grey;
+	}
+
+	@include respond-to( 1024px ) {
+		border-top: 70px solid $grey;
+	}
+
+	@include respond-to( 1100px ) {
+		border-top: 90px solid $grey;
+		padding: 30px 0;
+	}
+}
+
+
+// background-container
+.container {
+
+}
+
+
+// wrap div
+.wrap {
+	max-width: 1100px;
+	margin: 0 auto;
+	position: relative;
+	@include clearfix;
+}
+
+
+// header styles
+header {
+	position: relative;
+	text-align: center;
+
+	@include respond-to( 1100px ) {
+		border-radius: 20px;
+		overflow: hidden;
+	}
+
+	img {
+		display: block;
+	}
+}
+
+
+
+
+
+// intro font size
+.intro {
+	font-size: 1.4em;
+	line-height: 1.6em;
+	padding: 20px;
+	color: lighten( $grey, 20% );
+
+	@include respond-to( 768px ) {
+		font-size: 1.6em;
+		padding: 40px 20px 20px 20px;
+	}
+
+	@include respond-to( 1024px ) {
+		font-size:  1.8em;
+	}
+
+	p {
+		padding: 10px 0;
+
+		@include respond-to( 768px ) {
+			padding: 20px 0;
+		}
+	}
+}
+
+
+
+// colors
+.bg-teal { background: $teal; }
+.bg-green { background: $green; }
+.bg-green-light { background: $green-light; }
+.bg-red { background: $red; }
+.bg-grey { background: $grey; }
+.bg-grey-light { background: $grey-light; }
+
+.text-teal { color: $teal; }
+.text-green { color: $green; }
+.text-green-light { color: $green-light; }
+.text-red { color: $red; }
+.text-grey { color: $grey; }
+.text-grey-light { color: $grey-light; }
+
+
+
+// style the thermometer a bit.
+.savings-thermometer {
+	margin: 0 auto;
+
+	@include respond-to( 600px ) {
+		margin: 0 0 10px 20px;
+		float: right;
+	}
+}
+
+
+
+// tool styles
+.tool {
+	padding: 0;
+
+	.calculator {
+		color: white;
+		@include font-title;
+		background-position: left center;
+		background-repeat: repeat-y;
+		padding-bottom: 20px;
+		
+		@include respond-to( 768px ) { 
+			font-size: 1.2em;
+			padding-bottom: 0;
+
+			img {
+				margin-top: 20px;
+			}
+		}
+
+		@include respond-to( 1100px ) {
+			border-radius: 20px;
+			margin-top: 30px;
+		}
+
+		button, input[type=submit], .btn {
+			width: 100%;
+			margin: 0 auto;
+		}
+
+		.third {
+			padding: 10px 20px;
+			
+			@include respond-to( 768px ) {
+				padding: 20px 10px;
+
+				&.gradient {
+					background-position: left center;
+					background-repeat: repeat-y;
+					padding-left: 40px;
+				}
+			}
+		}
+
+		label {
+			display: inline-block;
+			margin-bottom: 5px;
+		}
+
+		.result {
+			background: rgba( white, .2 );
+			color: white;
+			border-radius: 20px;
+			padding: 20px;
+			text-align: center;
+			transition: 400ms all ease-in-out;
+			
+			@include respond-to( 768px ) {
+				padding: 20px 30px;
+				margin-top: 10px;
+			}
+
+			&.calculated {
+				background: rgba( white, .5 );
+				color: $green;
+			}
+		}
+	}
+}
+
+
+
+// button styles
+input[type=submit], button, .btn {
+	@include font-title;
+	padding: 15px;
+	background-color: $green;
+	background-position: left center;
+	background-repeat: repeat-y;
+	color: white;
+	border: 0;
+	border-radius: 10px;
+	font-size: 2em;
+	line-height: 1.4em;
+	width: 100%;
+	box-sizing: border-box;
+	text-transform: uppercase;
+	display: block;
+	cursor: pointer;
+	text-align: center;
+	position: relative;
+	margin: 5px auto 15px;
+	box-shadow: 3px 3px 25px lighten( $grey, 35% );
+
+	@include respond-to( 768px ) {
+		font-size: 2.4em;
+		max-width: 40%;
+	}
+
+	span {
+		display: block;
+	}
+	
+	&:after {
+		content: "";
+		position: absolute;
+		right: 5px;
+		top: 50%;
+		width: 30px;
+		height: 30px;
+		margin-top: -15px;
+	}
+
+	&:hover {
+		opacity: .9;
+		color: white;
+	}
+
+	&.go-back {
+		background-color: lighten( $grey, 20% );
+		font-size: 1.5em;
+		color: white;
+	}
+
+	&.calculate, &.apply {
+		background-color: $teal;
+	}
+}
+
+
+textarea {
+	height: 234px;
+
+	@include respond-to( 1024px ) {
+		height: 241px;
+	}
+}
+
+
+.contact-title {
+	h2 {
+		padding: 40px 0 5px 20px;
+		color: $green;
+		text-transform: uppercase;
+		font-size: 25px;
+
+		@include respond-to( 768px ) {
+			padding: 60px 0 5px 20px;
+			font-size: 35px;
+		}
+
+		@include respond-to( 1120px ) {
+			padding: 60px 0 5px 0;
+		}
+	}
+}
+
+
+.contact-subtitle {
+	padding: 20px 20px 5px 20px;
+
+	@include respond-to( 768px ) {
+		padding: 25px 30px 10px 30px;
+	}
+
+	@include respond-to( 1120px ) {
+		padding: 25px 30px 10px 30px;
+	}
+
+	h3 {
+		padding: 0;
+		color: white;
+	}
+}
+
+
+.contact {
+	padding: 20px;
+
+	@include respond-to( 768px ) {
+		padding: 20px 0;
+	}
+
+	@include respond-to( 1120px ) {
+		.wrap {
+			max-width: 1140px;
+		}
+	}
+}
+
+
+.buttons {
+	padding: 0 20px;
+}
+
+
+.footer-bar {
+	padding: 40px 20px 20px 20px;
+}
+
+
+.fine-print {
+	padding: 20px;
+	font-size: .7em;
+	line-height: 1.3em;
+	text-align: left;
+	color: lighten( $grey, 30% );
+
+	@include respond-to( 1120px ) {
+		padding: 20px 0;
+	}
+
+	img {
+		float: right;
+		margin: 0 0 15px 15px;
+	}
+}
+
