@@ -292,6 +292,7 @@ textarea {
 
 .contact {
 	padding: 20px;
+	@include clearfix;
 
 	.error {
 		padding: 0 20px;
@@ -299,7 +300,7 @@ textarea {
 	}
 
 	@include respond-to( 768px ) {
-		padding: 20px 0;
+		padding: 20px 0 40px 0;
 	}
 
 	@include respond-to( 1120px ) {
