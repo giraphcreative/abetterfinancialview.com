@@ -140,12 +140,11 @@ header {
 		@include font-title;
 		background-position: left center;
 		background-repeat: repeat-y;
-		padding-bottom: 20px;
+		padding: 20px;
 		
 		@include respond-to( 768px ) { 
 			font-size: 1.2em;
-			padding-bottom: 0;
-
+			
 			img {
 				margin-top: 20px;
 			}
@@ -159,20 +158,6 @@ header {
 		button, input[type=submit], .btn {
 			width: 100%;
 			margin: 0 auto;
-		}
-
-		.third {
-			padding: 10px 20px;
-			
-			@include respond-to( 768px ) {
-				padding: 20px 10px;
-
-				&.gradient {
-					background-position: left center;
-					background-repeat: repeat-y;
-					padding-left: 40px;
-				}
-			}
 		}
 
 		label {
