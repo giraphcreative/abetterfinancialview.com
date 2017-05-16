@@ -1,3 +1,5 @@
+
+
 // quick function to validate email addresses.
 var valid_email = function ( email ) {
     var filter = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
