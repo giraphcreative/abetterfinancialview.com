@@ -184,13 +184,12 @@ header {
 			background: rgba( white, .2 );
 			color: white;
 			border-radius: 20px;
-			padding: 20px;
+			padding: 10px 20px;
 			text-align: center;
 			transition: 400ms all ease-in-out;
 			
 			@include respond-to( 768px ) {
-				padding: 20px 30px;
-				margin-top: 10px;
+				margin-top: 3px;
 			}
 
 			&.calculated {
