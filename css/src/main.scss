@@ -295,6 +295,7 @@ textarea {
 
 	.error {
 		padding: 0 20px;
+		@include font-bold;
 	}
 
 	@include respond-to( 768px ) {

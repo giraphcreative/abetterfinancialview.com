@@ -44,8 +44,6 @@ var contact_submit = function( form ) {
 		// send form values to our PHP handler.
 		$.post( "/send.php", url_params, function( response ){
 			
-			console.log( response );
-
 			if ( response === "success" ) {
 				// if success is returned, redirect to thanks page.
 				location.href = "/thanks.html";
