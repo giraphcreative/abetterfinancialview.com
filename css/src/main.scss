@@ -249,15 +249,7 @@ textarea {
 .contact-title {
 	margin-top: 30px;
 	font-size: 1.5em;
-	padding: 20px 20px 5px 20px;
-
-	@include respond-to( 768px ) {
-		padding: 25px 30px 10px 30px;
-	}
-
-	@include respond-to( 1120px ) {
-		padding: 25px 30px 10px 30px;
-	}
+	padding: 20px 0;
 
 	h3 {
 		padding: 0 20px;
@@ -281,12 +273,6 @@ textarea {
 
 	@include respond-to( 768px ) {
 		padding: 20px 0 40px 0;
-	}
-
-	@include respond-to( 1120px ) {
-		.wrap {
-			max-width: 1140px;
-		}
 	}
 }
 
