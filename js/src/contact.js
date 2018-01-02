@@ -12,15 +12,27 @@ var valid_email = function ( email ) {
 var contact_submit = function( form ) {
 
 	// disable the submit button
-	$( form ).find("input[type=submit]").attr("disabled", "disabled");;
+	$( form ).find("input[type=submit]").attr("disabled", "disabled");
 
 	// store some variables with form values for validation
 	// and eventual submission.
+
+    var optionCount = 0;
+    var optionValue = "";
+    $("input[name=reason]:checked").each(function() {
+		if ( optionCount > 0 ) optionValue += ",";
+		optionValue += $(this).val();
+		optionCount++;
+    });
+
 	var field = {
 			name: $( form ).find( "input[name=name]" ).val(),
 			email: $( form ).find( "input[name=email]" ).val(),
 			phone: $( form ).find( "input[name=phone]" ).val(),
+			referrer_fname: $( form ).find( "input[name=referrer-fname]" ).val(),
+			referrer_lname: $( form ).find( "input[name=referrer-lname]" ).val(),
 			message: $( form ).find( "textarea" ).val(),
+			interested: optionValue,
 		},
 		url_params = $.param( field ),
 		errors = [],

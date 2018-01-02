@@ -22,23 +22,29 @@ $grey-light: lighten( $grey, 40% );
 
 
 body {
-	border-top: 20px solid $grey;
 	background: url(../img/bg-body.jpg) center center repeat-x;
 	background-size: cover;
 
-	@include respond-to( 768px ) {
-		border-top: 40px solid $grey;
-	}
-
-	@include respond-to( 1024px ) {
-		border-top: 60px solid $grey;
-	}
-
 	@include respond-to( 1100px ) {
-		border-top: 80px solid $grey;
 		padding: 30px 0;
 	}
 }
+
+
+// colors
+.bg-teal { background: $teal; }
+.bg-green { background: $green; }
+.bg-green-light { background: $green-light; }
+.bg-red { background: $red; }
+.bg-grey { background: $grey; }
+.bg-grey-light { background: $grey-light; }
+
+.text-teal { color: $teal; }
+.text-green { color: $green; }
+.text-green-light { color: $green-light; }
+.text-red { color: $red; }
+.text-grey { color: $grey; }
+.text-grey-light { color: $grey-light; }
 
 
 // background-container
@@ -73,8 +79,6 @@ header {
 
 
 
-
-
 // intro font size
 .intro {
 	font-size: 1.4em;
@@ -102,85 +106,74 @@ header {
 
 
 
-// colors
-.bg-teal { background: $teal; }
-.bg-green { background: $green; }
-.bg-green-light { background: $green-light; }
-.bg-red { background: $red; }
-.bg-grey { background: $grey; }
-.bg-grey-light { background: $grey-light; }
-
-.text-teal { color: $teal; }
-.text-green { color: $green; }
-.text-green-light { color: $green-light; }
-.text-red { color: $red; }
-.text-grey { color: $grey; }
-.text-grey-light { color: $grey-light; }
-
-
-
-// style the thermometer a bit.
-.savings-thermometer {
-	margin: 0 auto;
-
-	@include respond-to( 600px ) {
-		margin: 0 0 10px 20px;
-		float: right;
-	}
-}
-
-
-
 // tool styles
-.tool {
-	padding: 0;
+.content {
+	padding: 20px;
 
-	.calculator {
-		color: white;
-		@include font-title;
-		background-position: left center;
-		background-repeat: repeat-y;
-		padding: 20px;
-		
-		@include respond-to( 768px ) { 
-			font-size: 1.2em;
-			
-			img {
-				margin-top: 20px;
-			}
+	@include respond-to( 768px ) {
+		padding: 30px 40px;
+	}
+
+	h2 {
+		@include font-bold;
+		font-size: 1.8em;
+		line-height: 1.4em;
+	}
+
+	h3 {
+		@include font-bold;
+		font-size: 1.3em;
+		line-height: 1.4em;
+		padding: 20px 0 10px 0;
+	}
+
+	.ipad {
+		@include respond-to( 768px ) {
+			padding: 10px 0 10px 10px;
+			float: right;
 		}
+	}
 
-		@include respond-to( 1100px ) {
-			border-radius: 20px;
-			margin-top: 30px;
+	.bullet-image {
+		float: left;
+		width: 10%;
+		clear: left;
+		text-align: right;
+		padding: 8px 0;
+
+		@include respond-to( 768px ) {
+			width: 5%;
 		}
+	}
 
-		button, input[type=submit], .btn {
-			width: 100%;
-			margin: 0 auto;
+	.bullet-text {
+		float: left;
+		width: 90%;
+		padding: 10px;
+
+		@include respond-to( 768px ) {
+			width: 95%;
 		}
+	}
 
-		label {
-			display: inline-block;
-			margin-bottom: 5px;
+	.three-quarter {
+		padding: 0 30px 0 0;
+	}
+
+	.more-info {
+		padding: 30px 0 0 0;
+
+		h2 {
+			color: $green;
 		}
+	}
 
-		.result {
-			background: rgba( white, .2 );
-			color: white;
-			border-radius: 20px;
-			padding: 10px 20px;
-			text-align: center;
-			transition: 400ms all ease-in-out;
-			
-			@include respond-to( 768px ) {
-				margin-top: 3px;
-			}
+	ul {
+		list-style-type: disc;
+		padding: 5px 0 5px 25px;
 
-			&.calculated {
-				background: rgba( white, .5 );
-				color: $green;
-			}
+		li {
+			padding: 5px 0;
 		}
 	}
 }
@@ -254,25 +247,8 @@ textarea {
 
 
 .contact-title {
-	h2 {
-		padding: 40px 0 5px 20px;
-		color: $green;
-		text-transform: uppercase;
-		font-size: 25px;
-
-		@include respond-to( 768px ) {
-			padding: 60px 0 5px 20px;
-			font-size: 35px;
-		}
-
-		@include respond-to( 1120px ) {
-			padding: 60px 0 5px 0;
-		}
-	}
-}
-
-
-.contact-subtitle {
+	margin-top: 30px;
+	font-size: 1.5em;
 	padding: 20px 20px 5px 20px;
 
 	@include respond-to( 768px ) {
@@ -284,8 +260,12 @@ textarea {
 	}
 
 	h3 {
-		padding: 0;
+		padding: 0 20px;
 		color: white;
+
+		@include respond-to( 768px ) {
+			padding: 10px 40px;
+		}
 	}
 }
 
