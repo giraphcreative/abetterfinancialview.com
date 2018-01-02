@@ -101,6 +101,19 @@ header {
 
 
 
+.big-buttons {
+	text-align: center;
+	padding-bottom: 30px;
+
+	@include respond-to( 768px ) {
+		img {
+			max-width: 49%;
+		}
+	}
+}
+
+
+
 // tool styles
 .content {
 	padding: 20px;
