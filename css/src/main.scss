@@ -67,11 +67,6 @@ header {
 	position: relative;
 	text-align: center;
 
-	@include respond-to( 1100px ) {
-		border-radius: 20px;
-		overflow: hidden;
-	}
-
 	img {
 		display: block;
 	}
